@@ -1,16 +1,34 @@
-// COMPONENTS IMPORTS
-import Header from "./components/Header"
-import Main from "./components/Main"
-// REACT IMPORTS
-import { useRef } from "react"
-export default function App(){
-  
-  const inputField = useRef(null)
+import { useRef } from "react";
+import Header from "./components/Header";
+import Main from "./components/Main";
+
+// React Leaflet imports
+import 'leaflet/dist/leaflet.css'
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+
+export default function App() {
+  const inputField = useRef(null);
 
   return (
     <>
-      <Header inputField = {inputField}/>
-      <Main/>
+      <Header inputField={inputField} />
+      <Main />
+       <MapContainer
+        center={[51.505, -0.09]}
+        zoom={13}
+        scrollWheelZoom={false}
+        style={{ height: "400px", width: "100%" , zIndex: 0}}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={[51.505, -0.09]}>
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+      </MapContainer>
     </>
-  )
+  );
 }
