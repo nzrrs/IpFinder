@@ -1,4 +1,16 @@
-
+// COMPONENTS IMPORTS
+import Header from "./components/Header"
+import Main from "./components/Main"
+// REACT IMPORTS
+import { useRef } from "react"
 export default function App(){
-  return <h1>Hello</h1>
+  
+  const inputField = useRef(null)
+
+  return (
+    <>
+      <Header inputField = {inputField}/>
+      <Main/>
+    </>
+  )
 }
