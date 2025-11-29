@@ -8,6 +8,16 @@
   box-sizing: border-box;
 }
 
-header{
-  background: url('public/images/pattern-bg-desktop.png') center center / cover no-repeat;
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: black;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+header {
+  background: url("public/images/pattern-bg-desktop.png") center center / cover
+    no-repeat;
 }
